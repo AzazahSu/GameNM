@@ -1,27 +1,31 @@
-# 🎁 Presente Digital
+🎁 Olá! Surpresa!!! Aqui venho te apresentar! 
 
-Um mini-jogo criado como presente especial de aniversário.  
-Inspirado em NieR: Automata, com referências sutis a outros universos.
+Um mini-jogo de presente especial de aniversário!!!!! 
+Inspirado em algumas coisas que sei que gosta. :3
 
----
-
-### Sobre o projeto
-Este é um pequeno jogo interativo feito em HTML, CSS e JavaScript, criado com carinho e criatividade.  
-O jogador controla 1Z, enfrentando inimigos enquanto descobre alguns Easter Eggs escondidos e, quem sabe, um final secreto... 👀
+Foi feito em HTML, CSS e JavaScript, criado com carinho <3  
+Mas o que mais terá escondido?!... 👀
 
 ---
+
+Acesse: 
+   1. Acesse o jogo pelo link:
+      👉https://azazahsu.github.io/GameNM/MN.html
+
+   2. Ou via QR code que te entregarei :)
 
 ### 🎮 Como jogar
-1. Acesse o jogo pelo link:
-   👉 [Abrir o jogo](https://nyra.github.io/presente-a2/presente.html)
-2. Para o modo especial (via QR code):
-   👉 [Abrir modo especial 💫](https://nyra.github.io/presente-a2/presente.html?special=true)
-3. Escolha suas ações e tente vencer a batalha.
+
+   Escolha e tente vencer e descubra seu resultado ^^ 
 
 ---
 
 ### 🧡 Créditos
-Criado e desenvolvido por Érika com carinho 💕 e muita ajuda do GPT haha😅
-como um presente único e simbólico para Você!❤️  
+Criado e desenvolvido por Érika com muito Amor 💕 e MUITA ajuda do GPT HAHA 😅
+Só para Você!❤️  
 
-✨“Alguns presentes são feitos de código, outros de sentimento — e os melhores têm um pouco dos dois.” 💌
+✨“Alguns presentes podem ser feitos de código, outros de sentimento — mas é melhor com um pouco dos dois.” ✨
+
+Abraços, beijos （づ￣3￣）づ╭❤️～
+
+Espero que Goste!  ヾ(≧▽≦*)o✨
