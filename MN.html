@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title> 1SI2 GAME </title>
+<title> A2 GAME </title>
 <style>
   body { font-family: Arial, sans-serif; background-color: #111; color: #eee; text-align: center; position: relative;}
   #arena { margin-top: 30px; border: 2px solid #555; padding: 20px; display: inline-block; background-color: #222; position: relative;}
@@ -18,17 +18,22 @@
 </head>
 <body>
 
-<h1> ~ ARENA RUBI ~ </h1>
-
-  <P>Olá! Sou IS-I2, mas pode me chamar de Ísis,</br> Me ajude a derrotar meus inimigos! Escolha o que devo fazer nesta batalha! </P>
+<h1> ~ Arena: Sabre Rubi ~ </h1>
 
 
 <div id="arena">
-  <p><strong>Vida de 1S-I2:</strong></p>
+  <p><strong>A2:</strong>
   <div id="healthBar"><div id="health"></div></div>
-  
-  <p><strong>Vida do Inimigo:</strong></p>
+   <strong>Vida do Inimigo:</strong></p>
   <div id="enemyHealthBar"><div id="enemyHealth"></div></div>
+
+  <P> Me ajude a derrotar meus inimigos!</P>
+
+<div id="images">
+  <img id="playerImg" src="Heroina.jpg" alt="A2">
+  <img id="enemyImg" src="Inimigo.jpg" alt="Inimigo">
+</div>
+
 
   <p><strong>Escolha sua ação:</strong></p>
   <button class="btn" onclick="playerAttack()">Atacar</button>
@@ -37,10 +42,6 @@
   <button class="btn" onclick="restartGame()">Recomeçar</button>
 </div>
 
-<div id="images">
-  <img id="playerImg" src="placeholder_1S-I2.png" alt="1S-I2">
-  <img id="enemyImg" src="placeholder_enemy.png" alt="Inimigo">
-</div>
 
 <div id="log"></div>
 
@@ -81,10 +82,10 @@ function easterEgg(action) {
   if (gameOver) return;
   let chance = Math.random();
   let icon = '';
-  if (action === 'special' && chance < 0.5) { icon = '<img src="images/1S-I2_icon.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.special = true; }
-  else if (action === 'attack' && chance < 0.3) { icon = '<img src="images/transformer_icon.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.attack = true; }
-  else if (action === 'defend' && chance < 0.2) { icon = '<img src="images/magic_icon.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.defend = true; }
-  if (icon) logMessage(`Easter Egg! ${icon}`, 'cyan');
+  if (action === 'special' && chance < 0.5) { icon = '<img src="images/tigre.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.special = true; }
+  else if (action === 'attack' && chance < 0.3) { icon = '<img src="images/Optprime.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.attack = true; }
+  else if (action === 'defend' && chance < 0.2) { icon = '<img src="images/Jack.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.defend = true; }
+  if (icon) logMessage(`Olhe quem apareceu na sua torcida!: ${icon} "Vamos!!!"`, 'cyan');
 }
 
 function triggerVictoryCutscene() {
@@ -95,7 +96,7 @@ function triggerVictoryCutscene() {
   const interval = setInterval(() => {
     playerImg.style.border = playerImg.style.border === '3px solid gold' ? '3px solid transparent' : '3px solid gold';
     flashes++;
-    if (flashes > 5) { clearInterval(interval); playerImg.style.border = '3px solid transparent'; arena.style.backgroundColor = originalBg; logMessage('🎉 Todos os Easter Eggs desbloqueados! Parabéns! 🎉', 'pink'); showFigureReward(); }
+    if (flashes > 5) { clearInterval(interval); playerImg.style.border = '3px solid transparent'; arena.style.backgroundColor = originalBg; logMessage('🎉 Easter Egg desbloqueado! Parabéns! 🎉', 'pink'); showFigureReward(); }
   }, 300);
 }
 
@@ -104,7 +105,7 @@ function triggerSpecialEnding() {
   const arena = document.getElementById('arena');
   let originalBg = arena.style.backgroundColor;
   arena.style.backgroundColor = '#FFD700';
-  logMessage('✨ Final Secreto Desbloqueado! Feliz aniversário! ❤️ ✨', 'pink');
+  logMessage('✨ Final Desbloqueado! Feliz Aniversário! ❤️ ✨', 'pink');
   let flashes = 0;
   const interval = setInterval(() => {
     playerImg.style.border = playerImg.style.border === '3px solid pink' ? '3px solid transparent' : '3px solid pink';
@@ -132,9 +133,8 @@ function showFigureReward() {
   rewardMessage.style.textAlign = 'center';
   rewardMessage.style.zIndex = '1000';
   rewardMessage.innerHTML = `
-    🎉 Parabéns! Você venceu a Arena! 🎉<br><br>
-    Sua recompensa: <strong>1S-I2 está aqui para você!</strong><br>
-    💛 Abra seu presente físico agora! 💛
+    🎉 Você venceu a Batalha! 🎉<br><br>
+    <strong> "Parabéns!!" </br> Para retribuir, vou te acompanhar nas futuras batalhas! </strong><br> 💛
   `;
   
   document.body.appendChild(rewardMessage);
@@ -149,13 +149,13 @@ function showFigureReward() {
 // Ações do jogo
 function enemyAttack() {
   if (gameOver) return;
-  const enemies = ['Invasor Digital', 'TransformBot', 'Digitmon', 'Uma Aranha Gigante'];
+  const enemies = ['Invasor Alien', 'Deceptbots', 'Robô Mecânico', 'Uma Aranha Gigante'];
   const dmg = Math.floor(Math.random() * 15) + 5;
   playerHealth -= dmg;
   if (playerHealth < 0) playerHealth = 0;
   updateHealth();
   playSound('hit.mp3');
-  logMessage(`${enemies[Math.floor(Math.random()*enemies.length)]} atacou 1S-I2 causando ${dmg} de dano!`);
+  logMessage(`${enemies[Math.floor(Math.random()*enemies.length)]} atacou A2 causando ${dmg} de dano!`);
   flashBorder(enemyImg, 'red');
   checkEnd();
 }
@@ -167,7 +167,7 @@ function playerAttack() {
   enemyHealth -= dmg;
   if (enemyHealth < 0) enemyHealth = 0;
   updateHealth();
-  logMessage(`1S-I2 atacou causando ${dmg} de dano!`);
+  logMessage(`A2 atacou causando ${dmg} de dano!`);
   flashBorder(playerImg, 'red');
   easterEgg('attack');
   checkEnemy();
@@ -176,7 +176,7 @@ function playerAttack() {
 function playerDefend() {
   if (gameOver) return;
   playSound('defend.mp3');
-  logMessage(`1S-I2 se defendeu! O próximo ataque do inimigo será mais fraco.`, 'blue');
+  logMessage(`A2 se defendeu! O próximo ataque do inimigo será mais fraco.`, 'blue');
   flashBorder(playerImg, 'blue');
   easterEgg('defend');
   setTimeout(enemyAttack, 500);
@@ -189,7 +189,7 @@ function playerSpecial() {
   enemyHealth -= dmg;
   if (enemyHealth < 0) enemyHealth = 0;
   updateHealth();
-  logMessage(`1S-I2 usou Ataque Especial causando ${dmg} de dano!`, 'gold');
+  logMessage(`A2 usou Ataque Especial causando ${dmg} de dano!`, 'gold');
   flashBorder(playerImg, 'gold');
   easterEgg('special');
   checkEnemy();
@@ -202,9 +202,9 @@ function checkEnemy() {
     gameOver = true;
     playSound('victory.mp3');
     logMessage(`Inimigo derrotado! Você venceu a Arena! 🌟`, 'lime');
-    logMessage(`Mensagem especial: “Você salvou o dia e descobriu todos os easter eggs!” 💌`, 'pink');
-    playerImg.src = 'placeholder_victory.png';
-    enemyImg.src = 'placeholder_enemy_defeated.png';
+    logMessage(`Mensagem especial: “Você salvou o dia!” 💌`, 'pink');
+    playerImg.src = 'Vitoria.jpg';
+    enemyImg.src = 'InimigoPerde.jpg';
     triggerVictoryCutscene();
     triggerSpecialEnding();
   } else { setTimeout(enemyAttack, 500); }
@@ -216,9 +216,9 @@ function checkEnd() {
     updateHealth();
     gameOver = true;
     playSound('defeat.mp3');
-    logMessage(`1S-I2 foi derrotada… 😢`, 'red');
-    playerImg.src = 'placeholder_defeat.png';
-    enemyImg.src = 'placeholder_enemy_victory.png';
+    logMessage(`A2 foi derrotada… 😢`, 'red');
+    playerImg.src = 'Derrota.jpg';
+    enemyImg.src = 'InimigoGanha.jpg';
   }
 }
 
@@ -229,8 +229,8 @@ function restartGame() {
   easterEggsFound = { special:false, attack:false, defend:false };
   updateHealth();
   log.innerHTML = '';
-  playerImg.src = 'placeholder_1S-I2.png';
-  enemyImg.src = 'placeholder_enemy.png';
+  playerImg.src = 'Heroina.jpg';
+  enemyImg.src = 'Inimigo.jpg';
 }
 
 updateHealth();
