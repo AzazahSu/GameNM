@@ -46,7 +46,8 @@ let playerHealth = 100;
 let enemyHealth = 100;
 let gameOver = false;
 let easterEggsFound = { special:false, attack:false, defend:false };
-let specialMode = window.location.search.includes('special=true');
+// Modo especial sempre ativo
+let specialMode = true;
 
 const log = document.getElementById('log');
 const playerImg = document.getElementById('playerImg');
@@ -95,8 +96,8 @@ function triggerVictoryCutscene() {
   }, 300);
 }
 
+// Final secreto sempre ativo
 function triggerSpecialEnding() {
-  if (!specialMode) return;
   const arena = document.getElementById('arena');
   let originalBg = arena.style.backgroundColor;
   arena.style.backgroundColor = '#FFD700';
@@ -109,7 +110,7 @@ function triggerSpecialEnding() {
   }, 300);
 }
 
-// Recompensa física da figure
+// Pop-up da recompensa física
 function showFigureReward() {
   const arena = document.getElementById('arena');
   const rewardMessage = document.createElement('div');
@@ -201,8 +202,8 @@ function checkEnemy() {
     logMessage(`Mensagem especial: “Você salvou o dia e descobriu todos os easter eggs!” 💌`, 'pink');
     playerImg.src = 'placeholder_victory.png';
     enemyImg.src = 'placeholder_enemy_defeated.png';
-    if (easterEggsFound.special && easterEggsFound.attack && easterEggsFound.defend) triggerVictoryCutscene();
-    if (specialMode && easterEggsFound.special && easterEggsFound.attack && easterEggsFound.defend) triggerSpecialEnding();
+    triggerVictoryCutscene();
+    triggerSpecialEnding();
   } else { setTimeout(enemyAttack, 500); }
 }
 
