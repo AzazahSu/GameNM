@@ -43,7 +43,7 @@ function easterEgg(action) {
 function triggerVictoryCutscene() {
   const arena = document.getElementById('arena');
   let originalBg = arena.style.backgroundColor;
-  arena.style.backgroundColor = '#444';
+  arena.style.backgroundColor = '#330000';
   let flashes = 0;
   const interval = setInterval(() => {
     playerImg.style.border = playerImg.style.border === '3px solid gold' ? '3px solid transparent' : '3px solid gold';

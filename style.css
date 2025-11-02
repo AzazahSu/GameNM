@@ -12,7 +12,7 @@ body {
 }
  
 #arena { 
- background: rgba(20,20,20,0.85);
+ background: rgba(51, 0, 0, 0.85);
   box-shadow: 0 0 20px #a00 inset, 0 0 40px #a00;
   border: 2px solid #c00;
   border-radius: 20px;
@@ -22,13 +22,13 @@ body {
   padding: 10px 20px; 
   margin: 10px; 
   cursor: pointer; 
-  background-color: #222; 
+  background-color: #330000; 
   color: #fff; 
-  border: 1px solid #555; 
+  border: 1px solid #ff0000; 
 }
  
 .btn:hover { 
-  background-color: #333; 
+  background-color: #1a0000; 
 }
 
 #log { 
@@ -67,8 +67,7 @@ body {
 
 @keyframes particles {
   0% { transform: translateY(0); opacity: 1; }
-  50% { transform: translateY(-800px); opacity: 0.5; }
-  100% { transform: translateY(-200px); opacity: 0; }
+  100% { transform: translateY(-800px); opacity: 0; }
 }
 .particle {
   position: absolute;
@@ -76,6 +75,6 @@ body {
   width: 5px;
   height: 5px;
   background: crimson;
-  border-radius: 100%;
+  border-radius: 50%;
   animation: particles 6s linear infinite;
 }
