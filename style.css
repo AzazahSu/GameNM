@@ -1,0 +1,80 @@
+body { 
+  font-family: Arial, sans-serif; 
+  background-color: #111; 
+  color: #eee; 
+  text-align: center; 
+  background-repeat: no-repeat; /* Para não repetir a imagem */
+  background-size: cover; /* Para cobrir a tela toda */
+  background: radial-gradient(circle at center, #111 0%, #000 100%);
+  background-image: url('images/Background.jpg');
+  background-blend-mode: overlay;
+  background-attachment: fixed;
+}
+ 
+#arena { 
+ background: rgba(20,20,20,0.85);
+  box-shadow: 0 0 20px #a00 inset, 0 0 40px #a00;
+  border: 2px solid #c00;
+  border-radius: 20px;
+}
+
+.btn { 
+  padding: 10px 20px; 
+  margin: 10px; 
+  cursor: pointer; 
+  background-color: #222; 
+  color: #fff; 
+  border: 1px solid #555; 
+}
+ 
+.btn:hover { 
+  background-color: #333; 
+}
+
+#log { 
+  margin-top: 20px; 
+  min-height: 120px; 
+  max-width: 600px; 
+  margin-left: auto; 
+  margin-right: auto; 
+  text-align: left; 
+}
+
+#healthBar, #enemyHealthBar { 
+  width: 300px; 
+  height: 25px; 
+  background-color: #555; 
+  margin: 10px auto; border: 1px solid #333; 
+}
+
+#health, #enemyHealth { 
+  width: 100%; 
+  height: 100%; 
+  background-color: #4CAF50; 
+  transition: width 0.2s; 
+}
+
+#images { 
+  margin-top: 20px; 
+}
+
+#images img { 
+  width: 150px; 
+  margin: 0 20px; 
+  border: 3px solid transparent; 
+  transition: border 0.2s; 
+}
+
+@keyframes particles {
+  0% { transform: translateY(0); opacity: 0.5; }
+  100% { transform: translateY(-800px); opacity: 0; }
+}
+.particle {
+  position: absolute;
+  bottom: 0;
+  width: 5px;
+  height: 5px;
+  background: crimson;
+  border-radius: 50%;
+  animation: particles 6s linear infinite;
+}
