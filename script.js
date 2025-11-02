@@ -34,8 +34,8 @@ function easterEgg(action) {
   if (gameOver) return;
   let chance = Math.random();
   let icon = '';
-  if (action === 'special' && chance < 0.5) { icon = '<img src="images/Tigre.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.special = true; }
-  else if (action === 'attack' && chance < 0.3) { icon = '<img src="images/Optprime.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.attack = true; }
+  if (action === 'special' && chance < 0.5) { icon = '<img src="images/Optprime.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.special = true; }
+  else if (action === 'attack' && chance < 0.3) { icon = '<img src="images/Tiger.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.attack = true; }
   else if (action === 'defend' && chance < 0.2) { icon = '<img src="images/SamuraiX.png" style="width:32px; vertical-align:middle; animation: pulse 0.5s;">'; easterEggsFound.defend = true; }
   if (icon) logMessage(`Olhe quem apareceu na sua torcida!: ${icon} "Vamos!!!"`, 'cyan');
 }
@@ -186,7 +186,7 @@ function restartGame() {
 }
 
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 17; i++) {
   const p = document.createElement('div');
   p.classList.add('particle');
   p.style.left = Math.random() * 100 + '%';
